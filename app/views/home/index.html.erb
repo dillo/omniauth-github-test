@@ -1,0 +1,8 @@
+<h1>Welcome to My App</h1>
+
+<% if user_signed_in? %>
+  <p>Hello, <%= current_user.email %>!</p>
+  <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to "Sign in with GitHub", user_github_omniauth_authorize_path %>
+<% end %>
